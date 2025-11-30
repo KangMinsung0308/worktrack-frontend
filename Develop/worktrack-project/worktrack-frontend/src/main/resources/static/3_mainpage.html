@@ -22,11 +22,13 @@
             align-items: center;
             justify-content: center;
             padding: 16px;
+            padding-bottom: 100px;
         }
 
         @media (min-width: 768px) {
             body {
                 padding: 32px;
+                padding-bottom: 100px;
             }
         }
 
@@ -251,6 +253,7 @@
             border: none;
             transition: all 0.2s;
             font-weight: 500;
+            margin-bottom: 40px;
         }
 
         .submit-button:hover {
@@ -262,26 +265,190 @@
         }
 
         .nav-container {
-            width: 100%;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
             display: flex;
-            justify-content: flex-end;
-            margin-top: 48px;
+            justify-content: center;
+            background-color: white;
         }
-
-        .nav-buttons {
+        
+        .nav-wrapper {
             position: relative;
-            width: 126px;
-            height: 51px;
+            width: 100%;
+            max-width: 375px;
+            height: 56px;
         }
 
-        .nav-svg {
+        .nav-bg-left {
+            position: absolute;
+            background-color: #eeeeee;
+            height: 56px;
+            left: 0;
+            top: 0;
+            width: 33.33%;
+        }
+
+        .nav-bg-center {
+            position: absolute;
+            background-color: #eeeeee;
+            height: 56px;
+            left: 33.33%;
+            top: 0;
+            width: 33.33%;
+        }
+
+        .nav-bg-right {
+            position: absolute;
+            background-color: #eeeeee;
+            height: 56px;
+            left: 66.66%;
+            top: 0;
+            width: 33.34%;
+        }
+
+        /* Profile Icon Button */
+        .profile-icon-button {
+            position: absolute;
+            left: 79.47%;
+            right: 13.33%;
+            top: calc(50% - 5px);
+            transform: translateY(-50%);
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        .profile-icon-button:hover {
+            opacity: 0.7;
+        }
+
+        .profile-icon-button svg {
             display: block;
             width: 100%;
             height: 100%;
         }
 
-        .nav-icon {
+        /* Calendar Icon Button */
+        .calendar-icon-button {
+            position: absolute;
+            left: 13.33%;
+            right: 80.53%;
+            top: calc(50% - 5px);
+            transform: translateY(-50%);
             cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        .calendar-icon-button:hover {
+            opacity: 0.7;
+        }
+
+        .calendar-icon-button svg {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Main Button */
+        .main-button-wrapper {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 70px;
+            top: -14px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .main-button-wrapper:hover {
+            transform: translateX(-50%) scale(1.05);
+        }
+
+        .main-button-circle-wrapper {
+            position: absolute;
+            inset: -30%;
+        }
+
+        .main-button-circle-wrapper svg {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Main Icon */
+        .main-icon-wrapper {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            width: 26px;
+            top: calc(50% - 12px);
+            pointer-events: none;
+        }
+
+        .main-icon-wrapper svg {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Labels */
+        .nav-label-main {
+            position: absolute;
+            left: 50%;
+            top: 39.5px;
+            transform: translateX(-50%) translateY(-50%);
+            font-size: 10px;
+            font-weight: 600;
+            text-align: center;
+            white-space: nowrap;
+            letter-spacing: -0.1px;
+            pointer-events: none;
+            line-height: 0;
+        }
+
+        .nav-label-main p {
+            line-height: 1.5;
+            white-space: pre;
+        }
+
+        .nav-label-profile {
+            position: absolute;
+            left: 83.33%;
+            top: 43.5px;
+            transform: translateX(-50%) translateY(-50%);
+            font-size: 10px;
+            font-weight: 600;
+            text-align: center;
+            white-space: nowrap;
+            letter-spacing: -0.1px;
+            pointer-events: none;
+            line-height: 0;
+        }
+
+        .nav-label-profile p {
+            line-height: 1.5;
+            white-space: pre;
+        }
+
+        .nav-label-calendar {
+            position: absolute;
+            left: 16.67%;
+            top: 43.5px;
+            transform: translateX(-50%) translateY(-50%);
+            font-size: 10px;
+            font-weight: 600;
+            text-align: center;
+            white-space: nowrap;
+            letter-spacing: -0.1px;
+            pointer-events: none;
+            line-height: 0;
+        }
+
+        .nav-label-calendar p {
+            line-height: 1.5;
+            white-space: pre;
         }
 
         .date-picker-wrapper {
@@ -348,35 +515,70 @@
 
             <!-- Navigation Buttons -->
             <div class="nav-container">
-                <div class="nav-buttons">
-                    <svg class="nav-svg" fill="none" preserveAspectRatio="none" viewBox="0 0 126 51">
-                        <g id="Group 5">
-                            <g filter="url(#filter0_i_1_67)">
-                                <rect fill="#EEEEEE" height="51" rx="24.5" width="126"/>
-                            </g>
-                            <g class="nav-icon" id="calendarIcon">
-                                <rect height="23.999" stroke="black" stroke-width="0.001" width="23.999" x="20.0005" y="14.0005" fill="transparent"/>
-                                <path d="M28.037 16.0142C27.485 16.0142 27.037 16.4622 27.037 17.0142C24.826 17.0142 23.0059 18.8072 23.0059 21.0142V23.0142L23.037 31.0142C23.037 33.2202 24.828 35.0142 27.037 35.0142H37.037C39.246 35.0142 41.037 33.2232 41.037 31.0142L41.0059 23.0142V21.0142C41.0059 18.8032 39.244 17.0142 37.037 17.0142C37.037 16.4622 36.59 16.0142 36.037 16.0142C35.485 16.0142 35.037 16.4622 35.037 17.0142H29.037C29.037 16.4622 28.59 16.0142 28.037 16.0142ZM27.037 19.0142C27.037 19.5662 27.485 20.0142 28.037 20.0142C28.59 20.0142 29.037 19.5662 29.037 19.0142H35.037C35.037 19.5662 35.485 20.0142 36.037 20.0142C36.59 20.0142 37.037 19.5662 37.037 19.0142C38.134 19.0142 39.0059 19.9022 39.0059 21.0142V22.0142C37.0819 22.0142 26.9299 22.0142 25.0059 22.0142V21.0142C25.0059 19.9172 25.925 19.0142 27.037 19.0142ZM25.0059 24.0142C26.9299 24.0142 37.0819 24.0142 39.0059 24.0142L39.037 31.0142C39.037 32.1152 38.142 33.0142 37.037 33.0142H27.037C25.933 33.0142 25.037 32.1192 25.037 31.0142L25.0059 24.0142Z" fill="#000" id="calendarPath"/>
-                            </g>
-                            <g class="nav-icon" id="peopleIcon">
-                                <rect height="23.999" stroke="black" stroke-width="0.001" width="23.999" x="87.0005" y="14.0005" fill="transparent"/>
-                                <path d="M96.5 17C94.0147 17 92 19.015 92 21.5C92 23.985 94.0147 26 96.5 26C98.9853 26 101 23.985 101 21.5C101 19.015 98.9853 17 96.5 17ZM89 18C86.7909 18 85 19.791 85 22C85 24.209 86.7909 26 89 26C89.8294 26 90.615 25.747 91.2812 25.281C91.7339 24.965 91.8476 24.328 91.5312 23.875C91.2148 23.422 90.6089 23.34 90.1562 23.656C89.8233 23.889 89.4162 24 89 24C87.8954 24 87 23.105 87 22C87 20.895 87.8954 20 89 20C89.3262 20 89.6246 20.072 89.9062 20.219C90.3962 20.474 91.0264 20.302 91.2812 19.812C91.5361 19.323 91.3337 18.692 90.8438 18.438C90.2787 18.144 89.6494 18 89 18ZM96.5 19C97.8807 19 99 20.119 99 21.5C99 22.881 97.8807 24 96.5 24C95.1193 24 94 22.881 94 21.5C94 20.119 95.1193 19 96.5 19ZM86.0625 27.344C84.2284 28.101 83 29.956 83 32V34C83 34.552 83.4477 35 84 35H88C88.5523 35 89 34.552 89 34C89 33.448 88.5523 33 88 33H85V32C85 30.876 85.6667 29.844 86.433 29.39C87.1537 29.694 87.9161 29.924 88.5941 29.981C89.1445 30.028 89.6408 29.613 89.6875 29.062C89.7342 28.512 89.3365 28.046 88.7862 27.999C88.3472 27.962 87.8674 27.83 87.3125 27.594C87.1785 27.537 87.1007 27.492 86.8438 27.375C86.5919 27.26 86.3183 27.238 86.0625 27.344ZM93.0625 27.344C91.2284 28.101 90 29.956 90 32V34C90 34.552 90.4477 35 91 35H102C102.552 35 103 34.552 103 34V32C103 30.004 101.765 28.194 99.9375 27.406C99.6803 27.295 99.3806 27.292 99.125 27.406C98.2402 27.803 97.3782 28 96.5 28C95.6248 28 94.7598 27.792 93.8438 27.375C93.5919 27.26 93.3183 27.238 93.0625 27.344ZM93.447 29.39C94.3918 29.748 95.5309 30 96.5 30C97.4615 30 98.5535 29.765 99.4792 29.423C100.382 29.937 101 30.899 101 32V33H92V32C92 30.835 92.6559 29.853 93.447 29.39Z" fill="#2A343D" id="peoplePath"/>
-                            </g>
-                            <path d="M63 10V41" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.2" stroke-width="3"/>
-                        </g>
-                        <defs>
-                            <filter color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse" height="51" id="filter0_i_1_67" width="126" x="0" y="0">
-                                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                                <feBlend in="SourceGraphic" in2="BackgroundImageFix" mode="normal" result="shape"/>
-                                <feColorMatrix in="SourceAlpha" result="hardAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
-                                <feOffset/>
-                                <feGaussianBlur stdDeviation="2"/>
-                                <feComposite in2="hardAlpha" k2="-1" k3="1" operator="arithmetic"/>
-                                <feColorMatrix type="matrix" values="0 0 0 0 0.509804 0 0 0 0 0.509804 0 0 0 0 0.509804 0 0 0 0.25 0"/>
-                                <feBlend in2="shape" mode="normal" result="effect1_innerShadow_1_67"/>
-                            </filter>
-                        </defs>
-                    </svg>
+                <div class="nav-wrapper">
+                    <div class="nav-bg-left"></div>
+                    <div class="nav-bg-center"></div>
+                    <div class="nav-bg-right"></div>
+
+                    <!-- Calendar Icon Button -->
+                    <div class="calendar-icon-button active" data-nav="calendar">
+                        <svg fill="none" viewBox="0 0 23 24" preserveAspectRatio="none">
+                            <path d="M6.41745 0C5.71333 0 5.14187 0.565895 5.14187 1.26316C2.32156 1.26316 0 3.528 0 6.31579V8.8421L0.0395505 18.9474C0.0395505 21.7339 2.32412 24 5.14187 24H17.8977C20.7154 24 23 21.7377 23 18.9474L22.9604 8.8421V6.31579C22.9604 3.52295 20.7129 1.26316 17.8977 1.26316C17.8977 0.565895 15.3465 0 14.6221 0C13.918 0 13.3465 0.565895 13.3465 1.26316H7.69303C7.69303 0.565895 7.12285 0 6.41745 0ZM5.14187 3.78947C5.14187 4.48674 5.71333 5.05263 6.41745 5.05263C7.12285 5.05263 7.69303 4.48674 7.69303 3.78947H15.3465C15.3465 4.48674 15.918 5.05263 16.6221 5.05263C17.3275 5.05263 17.8977 4.48674 17.8977 3.78947C19.297 3.78947 20.4093 4.91116 20.4093 6.31579V7.57895C17.9551 7.57895 5.00538 7.57895 2.55116 7.57895V6.31579C2.55116 4.93011 3.72343 3.78947 5.14187 3.78947ZM2.55116 10.1053C5.00538 10.1053 17.9551 10.1053 20.4093 10.1053L20.4488 18.9474C20.4488 20.3381 19.3072 21.4737 17.8977 21.4737H5.14187C3.73363 21.4737 2.59071 20.3432 2.59071 18.9474L2.55116 10.1053Z" />
+                        </svg>
+                    </div>
+
+                    <!-- Profile Icon Button -->
+                    <div class="profile-icon-button" data-nav="profile">
+                        <svg fill="none" viewBox="0 0 27 24" preserveAspectRatio="none">
+                            <path d="M18.225 0C14.8698 0 12.15 2.68667 12.15 6C12.15 9.31333 14.8698 12 18.225 12C21.5802 12 24.3 9.31333 24.3 6C24.3 2.68667 21.5802 0 18.225 0ZM8.1 1.33333C5.11772 1.33333 2.7 3.72133 2.7 6.66667C2.7 9.612 5.11772 12 8.1 12C9.21969 12 10.2803 11.6627 11.1796 11.0413C11.7908 10.62 11.9443 9.77067 11.5171 9.16667C11.09 8.56267 10.272 8.45334 9.66087 8.87467C9.21146 9.18534 8.66187 9.33333 8.1 9.33333C6.60879 9.33333 5.4 8.14 5.4 6.66667C5.4 5.19333 6.60879 4 8.1 4C8.54037 4 8.94321 4.09599 9.32337 4.29199C9.98487 4.63199 10.8356 4.40268 11.1796 3.74935C11.5237 3.09735 11.2505 2.25598 10.5891 1.91732C9.82624 1.52532 8.97669 1.33333 8.1 1.33333ZM18.225 2.66667C20.0889 2.66667 21.6 4.15867 21.6 6C21.6 7.84133 20.0889 9.33333 18.225 9.33333C16.3611 9.33333 14.85 7.84133 14.85 6C14.85 4.15867 16.3611 2.66667 18.225 2.66667ZM4.13438 13.792C1.65834 14.8013 0 17.2747 0 20V22.6667C0 23.4027 0.604395 24 1.35 24H6.75C7.49561 24 8.1 23.4027 8.1 22.6667C8.1 21.9307 7.49561 21.3333 6.75 21.3333H2.7V20C2.7 18.5013 3.60004 17.1254 4.63455 16.52C5.60749 16.9254 6.63674 17.232 7.55204 17.308C8.29508 17.3707 8.96508 16.8173 9.02813 16.0827C9.09117 15.3493 8.55428 14.728 7.81137 14.6654C7.21872 14.616 6.57099 14.44 5.82188 14.1253C5.64098 14.0493 5.53594 13.9893 5.18913 13.8333C4.84906 13.68 4.47971 13.6507 4.13438 13.792ZM13.5844 13.792C11.1083 14.8013 9.45 17.2747 9.45 20V22.6667C9.45 23.4027 10.0544 24 10.8 24H25.65C26.3956 24 27 23.4027 27 22.6667V20C27 17.3387 25.3325 14.9253 22.8656 13.8747C22.5184 13.7267 22.1138 13.7227 21.7688 13.8747C20.5743 14.404 19.4106 14.6667 18.225 14.6667C17.0435 14.6667 15.8757 14.3893 14.6391 13.8333C14.2991 13.68 13.9297 13.6507 13.5844 13.792ZM14.1034 16.52C15.3789 16.9974 16.9167 17.3333 18.225 17.3333C19.523 17.3333 20.9972 17.02 22.2469 16.564C23.4654 17.2493 24.3 18.532 24.3 20V21.3333H12.15V20C12.15 18.4467 13.0355 17.1374 14.1034 16.52Z" />
+                        </svg>
+                    </div>
+
+                    <!-- Main Button (Center Circle) -->
+                    <div class="main-button-wrapper active" data-nav="main">
+                        <div class="main-button-circle-wrapper">
+                            <svg fill="none" viewBox="0 0 112 112" preserveAspectRatio="none">
+                                <defs>
+                                    <filter id="filter0_d_1_29" x="0" y="0" width="112" height="112" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                                        <feMorphology radius="1" operator="dilate" in="SourceAlpha" result="effect1_dropShadow_1_29"/>
+                                        <feOffset/>
+                                        <feGaussianBlur stdDeviation="10"/>
+                                        <feComposite in2="hardAlpha" operator="out"/>
+                                        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+                                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1_29"/>
+                                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1_29" result="shape"/>
+                                    </filter>
+                                </defs>
+                                <g filter="url(#filter0_d_1_29)">
+                                    <circle cx="56" cy="56" r="35" id="mainCircle" />
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Main Icon -->
+                    <div class="main-icon-wrapper">
+                        <svg fill="none" viewBox="0 0 26 24" preserveAspectRatio="none">
+                            <path d="M11.7 0C8.82817 0 6.5 2.388 6.5 5.33333H5.2C2.32817 5.33333 0 7.72133 0 10.6667V18.6667C0 21.612 2.32817 24 5.2 24H20.8C23.6718 24 26 21.612 26 18.6667V10.6667C26 7.72133 23.6718 5.33333 20.8 5.33333H19.5C19.5 2.388 17.1718 0 14.3 0H11.7ZM11.7 2.66667H14.3C15.736 2.66667 16.9 3.86 16.9 5.33333H9.1C9.1 3.86 10.264 2.66667 11.7 2.66667ZM5.2 8H20.8C22.236 8 23.4 9.19333 23.4 10.6667V11.0413L16.4531 13.416C14.5876 14.0547 11.4124 14.0547 9.54694 13.416L2.6 11.0413V10.6667C2.6 9.19333 3.76402 8 5.2 8ZM2.6 13.8333L8.73444 15.9587C11.1336 16.7787 14.8664 16.7787 17.2656 15.9587L23.4 13.8333V18.6667C23.4 20.14 22.236 21.3333 20.8 21.3333H5.2C3.76402 21.3333 2.6 20.14 2.6 18.6667V13.8333Z" fill="white" />
+                        </svg>
+                    </div>
+
+                    <!-- Main Label -->
+                    <div class="nav-label-main" id="mainLabel">
+                        <p>Main</p>
+                    </div>
+
+                    <!-- Profile Label -->
+                    <div class="nav-label-profile" id="profileLabel">
+                        <p>Profile</p>
+                    </div>
+
+                    <!-- Calendar Label -->
+                    <div class="nav-label-calendar" id="calendarLabel">
+                        <p>Calendar</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -389,7 +591,7 @@
         let endTime = '18:00';
         let isHalfDay = false;
         let isDatePickerOpen = false;
-        let activeTab = 'calendar';
+        let activeTab = 'main';
 
         // DOM elements
         const dateButton = document.getElementById('dateButton');
@@ -402,10 +604,9 @@
         const toggleBg = document.getElementById('toggleBg');
         const toggleCircle = document.getElementById('toggleCircle');
         const submitButton = document.getElementById('submitButton');
-        const calendarIcon = document.getElementById('calendarIcon');
-        const peopleIcon = document.getElementById('peopleIcon');
-        const calendarPath = document.getElementById('calendarPath');
-        const peoplePath = document.getElementById('peoplePath');
+        
+        // Navigation elements
+        const navButtons = document.querySelectorAll('[data-nav]');
 
         // Date picker toggle
         dateButton.addEventListener('click', () => {
@@ -457,17 +658,66 @@
         });
 
         // Navigation tabs
-        calendarIcon.addEventListener('click', () => {
-            activeTab = 'calendar';
-            calendarPath.setAttribute('fill', '#000');
-            peoplePath.setAttribute('fill', '#2A343D');
+        navButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const navType = this.getAttribute('data-nav');
+                
+                // 모든 버튼의 active 클래스 제거
+                navButtons.forEach(btn => btn.classList.remove('active'));
+                
+                // 클릭한 버튼에 active 클래스 추가
+                this.classList.add('active');
+                
+                // 아이콘 및 텍스트 색상 업데이트
+                updateButtonStyles(navType);
+                
+                activeTab = navType;
+                console.log(`${navType} 버튼이 선택되었습니다.`);
+            });
         });
 
-        peopleIcon.addEventListener('click', () => {
-            activeTab = 'people';
-            calendarPath.setAttribute('fill', '#2A343D');
-            peoplePath.setAttribute('fill', '#000');
-        });
+        function updateButtonStyles(activeNav) {
+            // Calendar 버튼 스타일
+            const calendarBtn = document.querySelector('.calendar-icon-button');
+            const calendarIcon = calendarBtn.querySelector('svg path');
+            const calendarLabel = document.getElementById('calendarLabel');
+            
+            if (activeNav === 'calendar') {
+                calendarIcon.style.fill = '#010101';
+                calendarLabel.style.color = '#010101';
+            } else {
+                calendarIcon.style.fill = '#c7c7cc';
+                calendarLabel.style.color = '#c7c7cc';
+            }
+            
+            // Profile 버튼 스타일
+            const profileBtn = document.querySelector('.profile-icon-button');
+            const profileIcon = profileBtn.querySelector('svg path');
+            const profileLabel = document.getElementById('profileLabel');
+            
+            if (activeNav === 'profile') {
+                profileIcon.style.fill = '#010101';
+                profileLabel.style.color = '#010101';
+            } else {
+                profileIcon.style.fill = '#c7c7cc';
+                profileLabel.style.color = '#c7c7cc';
+            }
+            
+            // Main 버튼 스타일
+            const mainCircle = document.getElementById('mainCircle');
+            const mainLabel = document.getElementById('mainLabel');
+            
+            if (activeNav === 'main') {
+                mainCircle.style.fill = '#010101';
+                mainLabel.style.color = 'white';
+            } else {
+                mainCircle.style.fill = '#5a5a5a';
+                mainLabel.style.color = '#c7c7cc';
+            }
+        }
+
+        // 페이지 로드 시 초기 스타일 설정
+        updateButtonStyles('main');
 
         // Close date picker when clicking outside
         document.addEventListener('click', (e) => {
